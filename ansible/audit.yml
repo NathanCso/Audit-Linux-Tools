@@ -1,0 +1,11 @@
+- name: Mise en place du script d'audit Linux
+  hosts: Cibles
+  tasks:
+    - name: Copier le script d'audit
+      copy:
+        src: audit.sh
+        dest: /tmp/audit.sh
+        mode: '0755'
+
+    - name: Exécuter le script d'audit
+      command: bash /tmp/audit.sh
